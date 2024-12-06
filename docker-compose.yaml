@@ -8,7 +8,7 @@ services:
       dockerize
       -wait tcp://db:3306
       -timeout 20s
-      node index.js
+      sh -c "npm install && node index.js"
     tty: true
     container_name: node_app
     networks:
