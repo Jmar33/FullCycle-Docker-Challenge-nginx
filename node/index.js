@@ -11,9 +11,11 @@ const config = {
 const mysql = require('mysql');
 const connection = mysql.createConnection(config);
 
+const createTable = 'CREATE TABLE IF NOT EXISTS `nodedb`.`people` (name VARCHAR(255))';
+connection.query(createTable);
+
 const sql = `INSERT INTO people(name) values('Josimar')`;
 connection.query(sql);
-
 
 let names =[];
 const research = `SELECT name FROM people`;
